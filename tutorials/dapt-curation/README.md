@@ -39,6 +39,9 @@ The tutorial follows the steps below:<br>
 
 
 ## Usage
+Set the device whether CPU or GPU will be used for nemo curator:
+
+`export NEMO_CURATOR_DEVICE=cpu`
 
 After installing the NeMo Curator package, install the dependencies and run:
 

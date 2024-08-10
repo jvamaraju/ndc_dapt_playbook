@@ -16,7 +16,7 @@
 
 import json
 import re
-
+import os
 import dask.dataframe as dd
 import pandas as pd
 from modifiers import QuotationUnifier
@@ -229,7 +229,7 @@ def redact_pii(dataset: DocumentDataset) -> DocumentDataset:
                 "EMAIL_ADDRESS",
             ],
             anonymize_action="replace",
-            device="gpu",
+            device=os.getenv("NEMO_CURATOR_DEVICE", "gpu"),
         ),
         text_field="extracted_comment",
     )
